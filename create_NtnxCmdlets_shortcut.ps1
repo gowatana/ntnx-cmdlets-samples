@@ -7,7 +7,7 @@ $shortcut_dir = Join-Path $HOME "Desktop"
 $shortcut_path = Join-Path $shortcut_dir ($tool_name + ".lnk")
 
 $tool_work_dir = (ls $PSCommandPath).DirectoryName
-$profile_path = $tool_work_dir $profile_script_name
+$profile_path = Join-Path $tool_work_dir $profile_script_name
 
 $ps = "powershell"
 $ps_argument = ("-NoExit", "-File",  $profile_path) -join " "
